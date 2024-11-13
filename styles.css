@@ -1,207 +1,200 @@
+/* Body */
 body {
-    font-family: Arial, sans-serif;
-    color: #000;
-    background-color: #fff;
-    text-align: center;
+  font-family: 'Arial', sans-serif;
+  color: #fff;
+  background: linear-gradient(to bottom, #0b6b0b, #000000); /* Degradado de verde a negro */
+  min-height: 100vh;
+  margin: 0;
+  text-align: center;
 }
 
+/* Header */
 header {
   text-align: center;
   background-color: #dbdbdb;
-  color: #0c7123;
+  color: #11d23e;
   padding: 1em;
-  background-image: url('imagenes/carita\ \(1\).png'); /* Reemplaza con la ruta de tu imagen */
-  background-repeat: repeat; /* Repite el patrón */
+  background-image: url('imagenes/carita\ \(1\).png');
+  background-repeat: repeat;
 }
+
+/* Sections */
 section {
-    padding: 1em;
+  padding: 1em;
 }
 
+/* Headings */
 h2 {
-    color: #0fae0f;
+  color: #0fae0f;
+  font-size: 2rem;
+  padding-top: 50px;
 }
 
-.slider img {
-    width: 100%;
-    max-width: 400px;
-    margin: 0.5em;
-}
-
-footer {
-    background-color: #0fae0f;
-    color: white;
-    text-align: center;
-    padding: 1em;
-    margin-top: 2em;
-    margin: 0;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    font-family: lato;
-}
-
-h2 {
-    text-align: center;
-    font-size: 2rem;
-    padding-top: 50px;
-}
-
+/* Slider */
 .slider-frame {
-	width: 1280px;
-    height: auto;
-	margin:50px auto 0;
-	overflow: hidden;
-    position: relative;
+  width: 100%;
+  max-width: 1280px;
+  height: auto;
+  margin: 50px auto 0;
+  overflow: hidden;
+  position: relative;
 }
 
 .slider-frame ul {
-	display: flex;
-	padding: 0;
-	width: 400%;
-	
-	animation: slide 20s infinite alternate ease-in-out;
+  display: flex;
+  padding: 0;
+  width: 400%;
+  animation: slide 20s infinite alternate ease-in-out;
 }
 
 .slider-frame li {
-	width: 100%;
-	list-style: none;
+  width: 100%;
+  list-style: none;
 }
 
 .slider-frame img {
-	width: 100%;
+  width: 100%;
+  max-width: 400px;
+  margin: 0.5em;
 }
 
+/* Footer */
+footer {
+  background-color: #0fae0f;
+  color: white;
+  text-align: center;
+  padding: 1em;
+  margin-top: 2em;
+}
+
+/* Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Figure and Caption */
 figure {
-    position: relative;
-    display: inline-block; /* Asegúrate de que las imágenes no se apilen */
+  position: relative;
+  display: inline-block;
 }
 
 figcaption {
-    position: absolute;
-    bottom: 10px; /* Ajusta la posición vertical */
-    left: 10px; /* Ajusta la posición horizontal */
-    color: white; /* Cambia el color del texto */
-    background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente */
-    padding: 5px; /* Espaciado alrededor del texto */
-    border-radius: 5px; /* Bordes redondeados */
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 5px;
+  border-radius: 5px;
 }
 
+/* Keyframes for Slider */
 @keyframes slide {
-	0% {margin-left: 0;}
-	20% {margin-left: 0;}
-	
-	25% {margin-left: -100%;}
-	45% {margin-left: -100%;}
-	
-	50% {margin-left: -200%;}
-	70% {margin-left: -200%;}
-	
-	75% {margin-left: -300%;}
-	100% {margin-left: -300%;}
+  0%, 20% { margin-left: 0; }
+  25%, 45% { margin-left: -100%; }
+  50%, 70% { margin-left: -200%; }
+  75%, 100% { margin-left: -300%; }
 }
 
+/* Button Styling */
 button {
-    font-size: 17px;
-    padding: 1em 2.7em;
-    font-weight: 500;
-    background: #1f2937;
-    color: white;
-    border: none;
-    position: relative;
-    overflow: hidden;
-    border-radius: 0.6em;
-    cursor: pointer;
-  }
-  
-  .gradient {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    left: 0;
-    top: 0;
-    border-radius: 0.6em;
-    margin-top: -0.25em;
-    background-image: linear-gradient(
-      rgba(0, 0, 0, 0),
-      rgba(0, 0, 0, 0),
-      rgba(0, 0, 0, 0.3)
-    );
-  }
-  
-  .label {
-    position: relative;
-    top: -1px;
-  }
-  
-  .transition {
-    transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
-    transition-duration: 500ms;
-    background-color: rgba(16, 185, 129, 0.6);
-    border-radius: 9999px;
-    width: 0;
-    height: 0;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-  }
-  
-  button:hover .transition {
-    width: 14em;
-    height: 14em;
-  }
-  
-  button:active {
-    transform: scale(0.97);
-  }
-  
-  body {
-    background: linear-gradient(to bottom, #0b6b0b, #000000); /* Degradado de verde a negro */
-    min-height: 100vh; /* Asegura que el body tenga al menos la altura de la ventana */
-    margin: 0; /* Elimina el margen predeterminado del body */
-    color: white; /* Cambia el color del texto si es necesario para que sea legible */
+  font-size: 17px;
+  padding: 1em 2.7em;
+  font-weight: 500;
+  background: #1f2937;
+  color: white;
+  border: none;
+  border-radius: 0.6em;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
 }
 
+button .gradient {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3));
+  border-radius: 0.6em;
+}
+
+button:hover .transition {
+  width: 14em;
+  height: 14em;
+}
+
+button:active {
+  transform: scale(0.97);
+}
+
+/* Card */
+/* Tarjeta */
 #aboutCard {
-    position: fixed; /* Fija la tarjeta en la pantalla */
-    bottom: 20px; /* Distancia desde la parte inferior */
-    right: 20px; /* Distancia desde la derecha */
-    z-index: 1000; /* Asegura que la tarjeta esté por encima de otros elementos */
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+  width: 300px; /* Tamaño predeterminado */
+  padding: 1em;
+  background-color: rgba(0, 0, 0, 0.7); /* Fondo semi-transparente */
+  color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
+/* Ajustes para dispositivos pequeños */
+@media (max-width: 768px) {
+  #aboutCard {
+      width: 250px; /* Reducir el ancho en pantallas de tabletas */
+      padding: 0.8em;
+  }
+}
+
+@media (max-width: 480px) {
+  #aboutCard {
+      width: 200px; /* Reducir el ancho en pantallas de teléfonos */
+      padding: 0.5em;
+      bottom: 10px;
+      right: 10px;
+      font-size: 0.9em; /* Reducir ligeramente el tamaño del texto */
+  }
+}
+
+@media (max-width: 320px) {
+  #aboutCard {
+      width: 180px; /* Más pequeño aún para teléfonos muy pequeños */
+      padding: 0.4em;
+      font-size: 0.8em;
+  }
+}
+
+
+/* Container Styling */
 .container {
-  /* Basic dimensions and centering */
   width: 100%;
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-
-  /* Dark mode colors and gradient */
-  background: #a1eda6; /* Fallback for browsers that don't support gradients */
   background: linear-gradient(
-    135deg,
-    #80c256 25%,
-    #7bc84b 25%,
-    #8ee558 50%,
-    #8ee558 50%,
-    #8ee558 75%,
-    #8ee558 75%,
-    #8ee558
+      135deg,
+      #80c256 25%,
+      #7bc84b 25%,
+      #8ee558 50%,
+      #8ee558 50%,
+      #8ee558 75%,
+      #8ee558 75%,
+      #8ee558
   );
   background-size: 40px 40px;
-
-  /* Animation */
   animation: move 4s linear infinite;
 }
 
 @keyframes move {
-  0% {
-    background-position: 0 0;
-  }
-  100% {
-    background-position: 40px 40px;
-  }
+  0% { background-position: 0 0; }
+  100% { background-position: 40px 40px; }
 }
