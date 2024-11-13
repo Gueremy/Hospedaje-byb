@@ -138,7 +138,7 @@ button:active {
   bottom: 20px;
   right: 20px;
   z-index: 1000;
-  width: 300px; /* Tamaño predeterminado */
+  width: 200px; /* Tamaño predeterminado */
   padding: 1em;
   background-color: rgba(0, 0, 0, 0.7); /* Fondo semi-transparente */
   color: white;
@@ -149,7 +149,7 @@ button:active {
 /* Ajustes para dispositivos pequeños */
 @media (max-width: 768px) {
   #aboutCard {
-      width: 200px; /* Reducir el ancho en pantallas de tabletas */
+      width: 150px; /* Reducir el ancho en pantallas de tabletas */
       padding: 0.8em;
   }
 }
