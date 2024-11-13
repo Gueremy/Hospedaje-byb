@@ -149,14 +149,14 @@ button:active {
 /* Ajustes para dispositivos pequeños */
 @media (max-width: 768px) {
   #aboutCard {
-      width: 250px; /* Reducir el ancho en pantallas de tabletas */
+      width: 200px; /* Reducir el ancho en pantallas de tabletas */
       padding: 0.8em;
   }
 }
 
 @media (max-width: 480px) {
   #aboutCard {
-      width: 200px; /* Reducir el ancho en pantallas de teléfonos */
+      width: 100px; /* Reducir el ancho en pantallas de teléfonos */
       padding: 0.5em;
       bottom: 10px;
       right: 10px;
