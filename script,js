@@ -1,0 +1,36 @@
+// Función para manejar la selección de servicios
+function handleServiceSelection() {
+    calculateTotal(); // Calcula el total
+    submitReservation(); // Llama a la función de reserva
+}
+
+// Función para calcular el total de los servicios seleccionados
+function calculateTotal() {
+    const checkboxes = document.querySelectorAll('.service-list input[type="checkbox"]');
+    let total = 0;
+
+    checkboxes.forEach(checkbox => {
+        if (checkbox.checked) {
+            total += parseInt(checkbox.getAttribute("data-price"));
+        }
+    });
+
+    document.getElementById("totalPrice").innerText = "Total: $" + total.toLocaleString();
+}
+
+// Función para enviar la reserva (ejemplo básico)
+function submitReservation() {
+    const checkboxes = document.querySelectorAll('.service-list input[type="checkbox"]');
+    let selectedServices = [];
+    let total = 0;
+
+    checkboxes.forEach(checkbox => {
+        if (checkbox.checked) {
+            selectedServices.push(checkbox.parentElement.innerText);
+            total += parseInt(checkbox.getAttribute("data-price"));
+        }
+    });
+
+    // Muestra los servicios seleccionados y el total
+    alert("Servicios seleccionados:\n" + selectedServices.join("\n") + "\n\nTotal: $" + total.toLocaleString());
+}
