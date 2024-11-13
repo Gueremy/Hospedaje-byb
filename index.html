@@ -19,30 +19,55 @@
 <!-- Sección Sobre Nosotros -->
  
 <section id="about">
-    <div class="d-flex justify-content-center">
-        <div class="card" id="aboutCard" style="width: 14.4rem; min-height: 320px;"> <!-- Ajusta min-height según sea necesario -->
-            <img src="imagenes/Logo.jpg" class="card-img-top img-fluid"  style="width: 50%;" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Sobre Nosotros</h5>
-                <p class="card-text">Hospedaje Byb Reldehue está ubicado en el hermoso campo de Reldehue, en el sur de Chile. Aquí encontrarás un ambiente familiar y acogedor, rodeado de naturaleza y paisajes únicos.</p>
-                <button id="Cotizar">
-                    <span class="transition"></span>
-                    <span class="gradient"></span>
-                    <span class="label">Cotizacion</span>
-                </button><br><br>
-                <button id="WhatsApp" onclick="window.location.href='https://wa.link/5ianbo'">
-                    <span class="transition"></span>
-                    <span class="gradient"></span>
-                    <span class="label">Reservar</span>
-                </button>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-6">
+                <div id="aboutCard" class="card">
+                    <button id="toggleButton" class="btn btn-secondary">−</button> <!-- Botón para minimizar y expandir -->
+                    <div id="cardContent">
+                        <img src="imagenes/Logo.jpg" class="card-img-top img-fluid" alt="Logo">
+                        <div class="card-body">
+                            <h5 class="card-title">Sobre Nosotros</h5>
+                            <p class="card-text">Hospedaje Byb Reldehue está ubicado en el hermoso campo de Reldehue, en el sur de Chile. Aquí encontrarás un ambiente familiar y acogedor, rodeado de naturaleza y paisajes únicos.</p>
+                            <button id="Cotizar" class="btn btn-primary">
+                                <span class="transition"></span>
+                                <span class="gradient"></span>
+                                <span class="label">Cotización</span>
+                            </button><br><br>
+                            <button id="WhatsApp" class="btn btn-success" onclick="window.location.href='https://wa.link/5ianbo'">
+                                <span class="transition"></span>
+                                <span class="gradient"></span>
+                                <span class="label">Reservar</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </section>
-
+    
 <script>
+    // Redirige a Reservar.html al hacer clic en el botón Cotizar
     document.getElementById('Cotizar').addEventListener('click', function() {
-        window.location.href = 'reservar.html'; // Redirige a Reservar.html al hacer clic en el botón
+        window.location.href = 'reservar.html';
+    });
+
+    // Obtener los elementos
+    const aboutCard = document.getElementById("aboutCard");
+    const toggleButton = document.getElementById("toggleButton");
+
+    // Añadir evento de clic al botón
+    toggleButton.addEventListener("click", () => {
+        // Alternar entre expandido y minimizado
+        aboutCard.classList.toggle("minimized");
+
+        // Cambiar el texto del botón según el estado
+        if (aboutCard.classList.contains("minimized")) {
+            toggleButton.textContent = "+"; // Cambia a "+" cuando está minimizada
+        } else {
+            toggleButton.textContent = "−"; // Cambia a "−" cuando está expandida
+        }
     });
 </script>
 
@@ -81,7 +106,7 @@
                         </li>
                         <li>
                             <figure>
-                                <img src="imagenes/Habitacion.jpg"  style="width: 100%;" alt="">
+                                <img src="imagenes/habitacion.jpg"  style="width: 100%;" alt="">
                                 <figcaption>Habitaciones</figcaption>
                             </figure>
                         </li>
@@ -222,7 +247,7 @@
                     <div class="image-container">
                         
                         <figure>
-                            <img src="imagenes/kayak.jpg" alt="Kayak" width="350" height="350">
+                            <img src="imagenes/kayak.jpg" alt="Kayak" width="350" height="350" >
                         </figure>
                         
                     </div>
